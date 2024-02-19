@@ -1,7 +1,7 @@
 package application_test
 
 import (
-	uuid "github.com/satori/go.uuid"
+	"github.com/google/uuid"
 	"github.com/souluanf/hexagonal-arch-golang/application"
 	"github.com/stretchr/testify/require"
 	_ "github.com/stretchr/testify/require"
@@ -38,7 +38,7 @@ func TestProduct_Disable(t *testing.T) {
 
 func TestProduct_IsValid(t *testing.T) {
 	product := application.Product{}
-	product.Id = uuid.NewV4().String()
+	product.Id = uuid.New().String()
 	product.Name = "Product 1"
 	product.Price = 10
 
@@ -68,7 +68,7 @@ func TestProduct_IsValid(t *testing.T) {
 
 func TestProduct_Getters(t *testing.T) {
 	product := application.Product{}
-	product.Id = uuid.NewV4().String()
+	product.Id = uuid.New().String()
 	product.Name = "Product 1"
 	product.Price = 10
 	product.Status = application.DISABLED

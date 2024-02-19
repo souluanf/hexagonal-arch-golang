@@ -4,7 +4,7 @@ import (
 	"errors"
 	"github.com/asaskevich/govalidator"
 	_ "github.com/asaskevich/govalidator"
-	uuid "github.com/satori/go.uuid"
+	"github.com/google/uuid"
 )
 
 func init() {
@@ -55,7 +55,7 @@ type Product struct {
 
 func NewProduct() *Product {
 	product := Product{
-		Id:     uuid.NewV4().String(),
+		Id:     uuid.New().String(),
 		Status: DISABLED,
 	}
 	return &product
