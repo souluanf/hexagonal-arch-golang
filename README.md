@@ -7,9 +7,5 @@ mockgen -destination=application/mocks/application.go -source=application/produc
 
 ### Run tests with coverage and generate html report
 ```bash
-go test ./... -coverprofile=coverage.out
-grep -v "mocks/" coverage.out > filtered_coverage.out
-rm coverage.out
-go tool cover -html=filtered_coverage.out -o coverage.html
-rm filtered_coverage.out
+go test ./... -coverprofile=coverage.out && grep -v "mocks/" coverage.out | go tool cover -html=/dev/stdin -o coverage.html && rm coverage.out
 ```
