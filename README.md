@@ -24,3 +24,13 @@ mockgen -destination=application/mocks/application.go -source=application/produc
 ```bash
 go test ./... -coverprofile=coverage.out && grep -v "mocks/" coverage.out | go tool cover -html=/dev/stdin -o coverage.html && rm coverage.out
 ``` 
+
+### Execute web server
+```bash
+go run main.go http
+```
+
+### GET /products/{id}
+```bash
+http://localhost:8080/products/ad10a8bc-c9e7-4d5d-8a4f-7611cdba3c95
+```
