@@ -2,6 +2,7 @@ package server
 
 import (
 	"github.com/gorilla/mux"
+	"github.com/souluanf/hexagonal-arch-golang/adapters/web/handler"
 	"github.com/souluanf/hexagonal-arch-golang/application"
 	"github.com/urfave/negroni"
 	"log"
@@ -22,6 +23,9 @@ func (w WebServer) Serve() {
 
 	r := mux.NewRouter()
 	n := negroni.New(negroni.NewLogger())
+
+	handler.MakeProductHandlers(r, n, w.Service)
+	http.Handle("/", r)
 
 	server := &http.Server{
 		ReadHeaderTimeout: 10 * time.Second,
