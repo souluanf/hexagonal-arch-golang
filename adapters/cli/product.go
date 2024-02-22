@@ -32,7 +32,7 @@ func Run(
 		if err != nil {
 			return result, err
 		}
-		result = fmt.Sprintf("Product %s has been enabled: %t", res.GetName())
+		result = fmt.Sprintf("Product %s has been enabled.", res.GetName())
 
 	case "disable":
 		product, err := service.Get(productId)
@@ -43,7 +43,7 @@ func Run(
 		if err != nil {
 			return result, err
 		}
-		result = fmt.Sprintf("Product %s has been disabled: %t", res.GetName())
+		result = fmt.Sprintf("Product %s has been disabled.", res.GetName())
 
 	default:
 		res, err := service.Get(productId)
