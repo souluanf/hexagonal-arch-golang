@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"github.com/souluanf/hexagonal-arch-golang/adapters/cli"
 
 	"github.com/spf13/cobra"
@@ -13,15 +14,14 @@ var productPrice float64
 
 var cliCmd = &cobra.Command{
 	Use:   "cli",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "manage products",
+	Long:  `cli is a command line tool to manage products. Use it to get, enable or disable a product, or to create a new product.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		cli.Run(&productService, action, productId, productName, productPrice)
+		result, err := cli.Run(&productService, action, productId, productName, productPrice)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+		fmt.Println(result)
 	},
 }
 

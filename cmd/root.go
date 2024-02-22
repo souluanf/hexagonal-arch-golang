@@ -13,14 +13,9 @@ var productDb = dbInfra.NewProductDb(db)
 var productService = application.ProductService{Persistence: productDb}
 
 var rootCmd = &cobra.Command{
-	Use:   "hexagonal-arch-golang",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Use:   "hexagonal arch with golang",
+	Short: "An example of hexagonal architecture with golang",
+	Long:  `This is an example of hexagonal architecture with golang.`,
 }
 
 func Execute() {
