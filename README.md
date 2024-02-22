@@ -47,3 +47,13 @@ curl --location 'http://localhost:8080/products' \
 ```bash
 curl --location 'http://localhost:8080/products/ad10a8bc-c9e7-4d5d-8a4f-7611cdba3c95'
 ```
+
+#### GET /products/{id}/enable
+```bash
+curl --location 'http://localhost:8080/products/0b8bd385-f222-4969-99c6-dc31071c0657/enable'
+```
+
+#### GET /products/{id}/disable
+```bash
+curl --location 'http://localhost:8080/products/0b8bd385-f222-4969-99c6-dc31071c0657/disable'
+```
