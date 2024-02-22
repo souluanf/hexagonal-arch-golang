@@ -30,7 +30,20 @@ go test ./... -coverprofile=coverage.out && grep -v "mocks/" coverage.out | go t
 go run main.go http
 ```
 
-### GET /products/{id}
+### Request examples
+
+
+#### Create a product
 ```bash
-http://localhost:8080/products/ad10a8bc-c9e7-4d5d-8a4f-7611cdba3c95
+curl --location 'http://localhost:8080/products' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Macbook Pro 2021",
+    "price": 2000.00,
+}'
+```
+
+#### GET /products/{id}
+```bash
+curl --location 'http://localhost:8080/products/ad10a8bc-c9e7-4d5d-8a4f-7611cdba3c95'
 ```
