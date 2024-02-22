@@ -1,5 +1,24 @@
 # Hexagonal Architecture in Go
 
+## Overview
+This is an example of an application implementing Hexagonal Architecture in Go.
+
+## Used Technologies
+- [Go](https://golang.org/): Main programming language.
+- [Docker](https://www.docker.com/): For managing application containers.
+- [SQLite](https://www.sqlite.org/index.html): Database used for storing products.
+- [Gorilla Mux](https://github.com/gorilla/mux): HTTP router used for managing API routes.
+- [Cobra](https://github.com/spf13/cobra): Library for easily creating CLI applications.
+- [Testify](https://github.com/stretchr/testify): Testing framework for Go.
+- [Negroni](https://github.com/urfave/negroni): HTTP middleware used for the application layer.
+- [Mockery](https://github.com/vektra/mockery): Tool for generating mocks in Go.
+- [UUID](https://github.com/google/uuid): For generating unique identifiers.
+- [GoValidator](https://github.com/asaskevich/govalidator): Library for data validation in Go.
+- [Uber Go Mock](https://github.com/uber-go/goleak): Library for creating mocks in tests.
+
+## Usage Instructions
+Follow these instructions to run and test the application locally.
+
 ### Prepare environment
 ```bash
 docker-compose up -d
